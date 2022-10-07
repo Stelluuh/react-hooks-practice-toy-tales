@@ -1,15 +1,28 @@
 import React, {useState} from "react";
 
-function ToyForm() {
-  const [toyName, setToyName] = useState("")
+function ToyForm({addNewToy}) {
+  const [name, setName] = useState("")
   const [image, setImage] = useState("")
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(e.target.toyName.value)
+    // console.log(e.target.name.value)
+    const formData = {
+      name,
+      image
+    };
+    fetch('http://localhost:3001/toys', {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(response => response.json())
+      .then(newToy => addNewToy(newToy))
   }
 
-  // console.log(toyName, image)
+  // console.log(name, image)
 
 
   return (
@@ -24,8 +37,8 @@ function ToyForm() {
           name="name"
           placeholder="Enter a toy's name..."
           className="input-text"
-          value={toyName}
-          onChange={e => setToyName(e.target.value)}
+          value={name}
+          onChange={e => setName(e.target.value)}
           
         />
         <br />

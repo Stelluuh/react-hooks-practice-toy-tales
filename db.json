@@ -47,6 +47,11 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Another Ham",
+      "image": "https://cdn140.picsart.com/244090226021212.png?r1024x1024",
+      "id": 9
     }
   ]
 }
