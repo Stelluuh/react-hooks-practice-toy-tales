@@ -1,7 +1,7 @@
 import React from "react";
 
 function ToyCard({ toy }) {
-  console.log(toy)
+  // console.log(toy)
   const {name, image, likes} = toy
 
   return (

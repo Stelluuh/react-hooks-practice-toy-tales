@@ -7,7 +7,7 @@ function ToyContainer({ toys }) {
   return (
     <div id="toy-collection">{toys.map(toy => (
       <ToyCard 
-        key={toys.id}
+        key={toy.id}
         toy={toy}
         />
     ))}
