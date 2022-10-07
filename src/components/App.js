@@ -14,7 +14,7 @@ function App() {
       .then(toyList => setToys(toyList))
   }, [])
 
-  console.log(toys)
+  // console.log(toys)
 
   function handleClick() {
     setShowForm((showForm) => !showForm);
@@ -27,7 +27,7 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer />
+      <ToyContainer toys={toys}/>
     </>
   );
 }
