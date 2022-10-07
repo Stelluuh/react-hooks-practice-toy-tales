@@ -1,7 +1,7 @@
 import React from "react";
 import ToyCard from "./ToyCard";
 
-function ToyContainer({ toys }) {
+function ToyContainer({ toys, onDeleteToy }) {
   // console.log({ toys })
   
   return (
@@ -9,6 +9,7 @@ function ToyContainer({ toys }) {
       <ToyCard 
         key={toy.id}
         toy={toy}
+        onDeleteToy={onDeleteToy}
         />
     ))}
     </div>

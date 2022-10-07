@@ -19,7 +19,11 @@ function ToyForm({addNewToy}) {
       body: JSON.stringify(formData)
     })
       .then(response => response.json())
-      .then(newToy => addNewToy(newToy))
+      .then(newToy => {
+        addNewToy(newToy)
+        setName("")
+        setImage("")
+      })
   }
 
   // console.log(name, image)

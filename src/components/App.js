@@ -14,14 +14,20 @@ function App() {
       .then(toyList => setToys(toyList))
   }, [])
 
+  function handleClick() {
+    setShowForm((showForm) => !showForm);
+  }
+
   function handleAddToy(newToy) {
     const newToyArray = [...toys, newToy]
     setToys(newToyArray)
   }
 
-  function handleClick() {
-    setShowForm((showForm) => !showForm);
+  function handleDeleteToy(deletedToy){
+    const updatedToyArray = toys.filter(toy => toy.id !== deletedToy.id)
+    setToys(updatedToyArray)
   }
+
 
   console.log(toys)
   return (
@@ -31,7 +37,10 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys}/>
+      <ToyContainer 
+        toys={toys}
+        onDeleteToy={handleDeleteToy}
+      />
     </>
   );
 }
