@@ -28,6 +28,13 @@ function App() {
     setToys(updatedToyArray)
   }
 
+  function handleLikes(likedToy) {
+    const updatedToyLikes = toys.map(toy => (
+      toy.id === likedToy.id ? likedToy : toy)
+    )
+    setToys(updatedToyLikes)
+  }
+
 
   console.log(toys)
   return (
@@ -40,6 +47,7 @@ function App() {
       <ToyContainer 
         toys={toys}
         onDeleteToy={handleDeleteToy}
+        onHandleLikes={handleLikes}
       />
     </>
   );
